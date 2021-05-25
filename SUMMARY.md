@@ -41,7 +41,7 @@
 
 * [Development Guide](reference/developing.md)
 * [Community](community.md)
-* [Related Projects](reference/related-projects.md)
+* [Related Projects](related-projects.md)
 * [Case Studies](https://www.telepresence.io/case-studies)
 * [Changelog](reference/changelog.md)
 
