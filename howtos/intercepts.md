@@ -19,95 +19,6 @@ Before you begin, you need to have [Telepresence installed](<../../install/), an
 
 This guide assumes you have a Kubernetes deployment and service accessible publicly by an ingress controller, and that you can run a copy of that service on your laptop.
 
-### Install the Telepresence CLI
-
-<Platform.TabGroup>
-<Platform.MacOSTab>
-
-```shell
-# Install via brew:
-brew install datawire/blackbird/telepresence
-
-# OR install manually:
-# 1. Download the latest binary (~60 MB):
-sudo curl -fL https://app.getambassador.io/download/tel2/darwin/amd64/$dlVersion$/telepresence -o /usr/local/bin/telepresence
-
-# 2. Make the binary executable:
-sudo chmod a+x /usr/local/bin/telepresence
-```
-
-</Platform.MacOSTab>
-<Platform.GNULinuxTab>
-
-```shell
-# 1. Download the latest binary (~50 MB):
-sudo curl -fL https://app.getambassador.io/download/tel2/linux/amd64/$dlVersion$/telepresence -o /usr/local/bin/telepresence
-
-# 2. Make the binary executable:
-sudo chmod a+x /usr/local/bin/telepresence
-```
-
-</Platform.GNULinuxTab>
-<Platform.WindowsTab>
-
-Windows is in Developer Preview. To install it, run the following Powershell commands as Administrator.
-1. Download the latest windows zip containing telepresence.exe and its dependencies (~50 MB):
-`curl -fL https://app.getambassador.io/download/tel2/windows/amd64/$dlVersion$/telepresence.zip -o telepresence.zip`
-2. Unzip the file to your desired directory:
-```powershell
-Expand-Archive -Path telepresence.zip
-Remove-Item 'telepresence.zip'
-cd telepresence
-```
-3. Run install-telepresence.ps1 to install telepresence's dependencies. It will install telepresence to C:\telepresence by default, but you can specify a custom path $path with `-Path $path`
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process
-.\install-telepresence.ps1
-```
-
-4. Remove the unzipped directory
-```powershell
-cd ..
-Remove-Item telepresence
-```
-
-5. Close your current Powershell and open a new one. Telepresence is now usable as telepresence.exe
-
-</Platform.WindowsTab>
-</Platform.TabGroup>
-
-## Test Telepresence
-
-Telepresence connects your local workstation to a remote Kubernetes cluster. Connect to Telepresence and test your connection.
-
-1. Connect to the cluster:
-   `telepresence connect`
-
-   ```console
-   $ telepresence connect
-   Launching Telepresence Daemon
-   ...
-   Connected to context default (https://<cluster public IP>)
-   ```
-
-   <Alert severity="info">
-
-    macOS users: If you receive an error when running Telepresence stating the developer cannot be verified, open **System Preferences → Security & Privacy → General**.
-    Click the **Open Anyway** button to grant access for Telepresence.
-
-   </Alert>
-
-2. Test that Telepresence is working properly by connecting to the Kubernetes API server: `curl -ik https://kubernetes.default`
-
-   <Alert severity="info">
-
-    The 401 response is expected.  What's important is that you were able to contact the API.
-
-   </Alert>
-
-   You now have access to your remote Kubernetes API server as if you were on the same network. You can now use any local tools to connect to any service in the cluster.
-
-   If you have difficulties connecting, make sure you are using Telepresence 2.0.3 or a later version. Check your version by entering `telepresence version` and [upgrade if needed](../../install/upgrade/).
 
 ## Intercept your service with a global intercept
 
@@ -124,6 +35,15 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
 
    ```
 
+   <Alert>
+    The 401 response is expected.
+   </Alert>
+
+   You now have access to your remote Kubernetes API server as if you were on the same network. You can now use any local tools to connect to any service in the cluster.
+
+   If you have difficulties connecting, make sure you are using Telepresence 2.0.3 or a later version. Check your version by entering `telepresence version` and [upgrade if needed](../../install/upgrade/).
+
+
 2. Enter `telepresence list` and make sure the service you want to intercept is listed. For example:
 
    ```console
@@ -132,11 +52,6 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
    example-service: ready to intercept (traffic-agent not yet installed)
    ...
    ```
-  <Alert severity="info">
-
-    The 401 response is expected.
-
-   </Alert>
 
 3. Get the name of the port you want to intercept on your service:
    `kubectl get service <service name> --output yaml`.
