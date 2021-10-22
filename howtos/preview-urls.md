@@ -12,8 +12,8 @@ Preview URLs are protected behind authentication through Ambassador Cloud, and, 
 
 ## Creating a preview URL
 
-1. Enter the `telepresence list` command to verify the service is listed. 
-Telepresence only supports Deployments, ReplicaSets, and StatefulSet controllers[?] with a label that matches a Service. 
+1. Connect to Telepresence and enter the `telepresence list` command in your CLI to verify the service is listed. 
+Telepresence only supports Deployments, ReplicaSets, and StatefulSet controllers with a label that matches a Service. 
 
 2. Enter `telepresence login` to launch Ambassador Cloud in your browser.
 
