@@ -72,9 +72,9 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
 4. Intercept all traffic going to the service in your cluster:
     `telepresence intercept <service-name> --port <local-port>[:<remote-port>] --env-file <path-to-env-file>`.
 
-  * For `--port`: specify the port the local instance of your service is running on. If the intercepted service exposes multiple ports, specify the port you want to intercept after a colon.
+    * For `--port`: specify the port the local instance of your service is running on. If the intercepted service exposes multiple ports, specify the port you want to intercept after a colon.
 
-  * For `--env-file`: specify a file path for Telepresence to write the environment variables that are set in the pod. 
+    * For `--env-file`: specify a file path for Telepresence to write the environment variables that are set in the pod. 
    
    The example below shows Telepresence intercepting traffic going to service `example-service`. Requests now reach the service on port `http` in the cluster get routed to `8080` on the workstation and write the environment variables of the service to `~/example-service-intercept.env`.
 
@@ -91,7 +91,7 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
 
 5. <a name="start-local-instance"></a>Start your local environment using the environment variables retrieved in the previous step.
 
-  The following are some examples of how to pass the environment variables to your local process:
+   The following are some examples of how to pass the environment variables to your local process:
    * **Docker:** enter `docker run` and provide the path to the file using the `--env-file` argument. For more information about Docker run commands, see the [Docker command-line reference documentation](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file).
    * **Visual Studio Code:** specify the path to the environment variables file in the `envFile` field of your configuration.
    * **JetBrains IDE (IntelliJ, WebStorm, PyCharm, GoLand, etc.):** use the [EnvFile plugin](https://plugins.jetbrains.com/plugin/7861-envfile).
