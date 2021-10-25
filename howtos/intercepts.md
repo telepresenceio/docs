@@ -36,7 +36,7 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
    ```
 
    <Alert>
-    The 401 response is expected.
+    The 401 response is expected when you first connect.
    </Alert>
 
    You now have access to your remote Kubernetes API server as if you were on the same network. You can now use any local tools to connect to any service in the cluster.
@@ -71,23 +71,19 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
 
 4. Intercept all traffic going to the service in your cluster:
     `telepresence intercept <service-name> --port <local-port>[:<remote-port>] --env-file <path-to-env-file>`.
-
-  * For `--port`: specify the port the local instance of your service is running on. If the intercepted service exposes multiple ports, specify the port you want to intercept after a colon.
-
-  * For `--env-file`: specify a file path for Telepresence to write the environment variables that are set in the pod. 
-   
-   The example below shows Telepresence intercepting traffic going to service `example-service`. Requests now reach the service on port `http` in the cluster get routed to `8080` on the workstation and write the environment variables of the service to `~/example-service-intercept.env`.
-
-   ```console
-   $ telepresence intercept example-service --port 8080:http --env-file ~/example-service-intercept.env
-   Using Deployment example-service
-   intercepted
-       Intercept name: example-service
-       State         : ACTIVE
-       Workload kind : Deployment
-       Destination   : 127.0.0.1:8080
-       Intercepting  : all TCP connections
-   ```
+      * For `--port`: specify the port the local instance of your service is running on. If the intercepted service exposes multiple ports, specify the port you want to intercept after a colon.
+      * For `--env-file`: specify a file path for Telepresence to write the environment variables that are set in the pod. 
+       The example below shows Telepresence intercepting traffic going to service `example-service`. Requests now reach the service on port `http` in the cluster get routed to `8080` on the workstation and write the environment variables of the service to `~/example-service-intercept.env`.
+       ```console
+       $ telepresence intercept example-service --port 8080:http --env-file ~/example-service-intercept.env
+       Using Deployment example-service
+       intercepted
+           Intercept name: example-service
+           State         : ACTIVE
+           Workload kind : Deployment
+           Destination   : 127.0.0.1:8080
+           Intercepting  : all TCP connections
+       ```
 
 5. <a name="start-local-instance"></a>Start your local environment using the environment variables retrieved in the previous step.
 

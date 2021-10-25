@@ -8,12 +8,12 @@ import Alert from '@material-ui/lab/Alert';
 
 Telepresence can generate sharable preview URLs. This enables you to work on a copy of your service locally, and share that environment with a teammate for pair programming. While using preview URLs, Telepresence will route only the requests coming from that preview URL to your local environment. Requests to the ingress are routed to your cluster as usual.
 
-Preview URLs are protected behind authentication through Ambassador Cloud, and, access to the URL is only available to  users in your organization. You can make the URL publicly accessible for sharing with outside collaborators.
+Preview URLs are protected behind authentication through Ambassador Cloud, and, access to the URL is only available to users in your organization. You can make the URL publicly accessible for sharing with outside collaborators.
 
 ## Creating a preview URL
 
 1. Connect to Telepresence and enter the `telepresence list` command in your CLI to verify the service is listed. 
-Telepresence only supports Deployments, ReplicaSets, and StatefulSet controllers with a label that matches a Service. 
+Telepresence only supports Deployments, ReplicaSets, and StatefulSet workloads with a label that matches a Service. 
 
 2. Enter `telepresence login` to launch Ambassador Cloud in your browser.
 
