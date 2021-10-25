@@ -73,7 +73,6 @@ With Telepresence, you can create [global intercepts](../../concepts/intercepts/
     `telepresence intercept <service-name> --port <local-port>[:<remote-port>] --env-file <path-to-env-file>`.
 
     * For `--port`: specify the port the local instance of your service is running on. If the intercepted service exposes multiple ports, specify the port you want to intercept after a colon.
-
     * For `--env-file`: specify a file path for Telepresence to write the environment variables that are set in the pod. 
    
    The example below shows Telepresence intercepting traffic going to service `example-service`. Requests now reach the service on port `http` in the cluster get routed to `8080` on the workstation and write the environment variables of the service to `~/example-service-intercept.env`.
