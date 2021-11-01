@@ -86,4 +86,4 @@ You can deactivate the intercept with `telepresence leave <deployment name>`. Th
 
 ### Proxy outcound connectivity for laptops
 
-If you are working on a laptop environment, you can use the AlsoProxy function to configure connections to the specific subnet spans. See [AlsoProxy in Laptop-side configuration](../../reference/config/#alsoproxy) for more details.
+To specify additional hosts or subnets that should be resolved inside of the cluster, see [AlsoProxy](../../reference/config/#alsoproxy) for more details.
