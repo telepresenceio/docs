@@ -110,7 +110,7 @@ If the Docker engine is not running, the command will fail and you will see <str
 
 A common use case for Telepresence is to connect your local development environment to a remote cluster. This way, if your application is too big or complex to run locally, you can still develop locally. In this Quick Start, we're also going to show Telepresence can be used for integration testing, by testing our fix against the services in the remote cluster.
 
-1. Inside your running Docker container we will create an intercept, which will tell Telepresence to send traffic to the service in your container instead of the service in the cluster:
+1. From your Docker container, create an intercept, which will tell Telepresence to send traffic to the service in your container instead of the service in the cluster:
    `telepresence intercept web --port 8080`
 
     When prompted for ingress configuration, all default values should be correct as displayed below.
