@@ -72,7 +72,7 @@ The remote cluster is running the Emojivoto application, which consists of four 
 
 We'll set up a development environment locally on your workstation. We'll then use Telepresence to connect this local development environment to the remote Kubernetes cluster. To save time, the development environment we'll use is pre-packaged as a Docker container.
 
-1. Run the Docker container locally:
+1. Run the Docker container locally, by running this command inside your local terminal:
 
 <Platform.TabGroup>
 <Platform.MacOSTab>
