@@ -12,6 +12,8 @@
        link: install/migrate-from-legacy/
      - title: Golang Development Environment Deployment Example
        link: install/qs-go-advanced
+     - title: Java Development Environment Deployment Example
+       link: install/java-env-advanced
  - title: Core concepts
    items:
      - title: The changing development workflow

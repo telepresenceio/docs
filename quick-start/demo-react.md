@@ -252,10 +252,11 @@ Next, we’ll create an intercept. An intercept is a rule that tells Telepresenc
   With Telepresence, these changes happen instantly.
 </Alert>
 
-## <img class="os-logo" src="../../../images/logo.png"/> What's Next?
 
 ## Create a complete development environment using this demo
 
-Apply what you've learned from this guide and employ the Emojivoto application in your own local development environment with Golang. See the [Creating a local Kubernetes development environment](../qs-go-advanced/) page to learn more.
+Apply what you've learned from this guide and employ the Emojivoto application in your own local development environment. See the Creating a local Kubernetes development environment pages for [Golang](../../qs-go-advanced/) and [Java](../../java-dev-advanced) page to learn more.
+
+## <img class="os-logo" src="../../../images/logo.png"/> What's Next?
 
 <QSCards/>
