@@ -191,4 +191,4 @@ Apply what you've learned from this guide and employ the Emojivoto application i
 
 ## <img class="os-logo" src="../../images/logo.png"/> What's Next?
 
-You've intercepted a service in one of our demo clusters, now you can use Telepresence to [intercept a service in your own environment](https://www.getambassador.io/docs/telepresence/latest/howtos/intercepts/)!
+Apply what you've learned from this guide and employ the Emojivoto application in your own local development environment. See the [Creating a local Kubernetes development environment](../qs-go-advanced/) page to learn more.
