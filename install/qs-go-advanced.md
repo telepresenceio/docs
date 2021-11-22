@@ -209,3 +209,6 @@ Once you have your local development environment configured for fast feedback, y
 	```
 7. Ask your teammates to refresh their view of the application and instantly see the local changes you’ve made.
 
+## <img class="os-logo" src="../../../images/logo.png"/> What's Next?
+
+Learn more about creating intercepts in your Telepresence environment with the [Intercept a service in your own environment](../../howtos/intercepts/) documentation.

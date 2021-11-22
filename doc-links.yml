@@ -13,7 +13,7 @@
      - title: Create a local Go K8s dev environment
        link: install/qs-go-advanced/
      - title: Create a local Java K8s dev environment
-       link: ../../cloud/latest/service-catalog/howtos/
+       link: ../../cloud/latest/service-catalog/howtos/complete-k8s/
  - title: Core concepts
    items:
      - title: The changing development workflow
