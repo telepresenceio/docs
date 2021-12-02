@@ -179,7 +179,7 @@ Refresh your view of the app at ${INGRESS_IP}.
 	# happy coding!
 
 	```
-8. Run the setup-dev-env.sh script locally. Use the $AMBASSADOR_API_KEY you created from Docker in the [emojivoto application tutorial](../qs-go/) or the [Ambassador Cloud deployment guide](../../../../cloud/latest/service-catalog/howtos/qs-java-advanced/).
+8. Run the setup-dev-env.sh script locally. Use the $AMBASSADOR_API_KEY you created from Docker in the [emojivoto application tutorial](../qs-go/) or the [Ambassador Cloud quick start guide](../../../../cloud/latest/service-catalog/quick-start/).
 	```
 	export AMBASSADOR_API_KEY=<your key>
 	git clone git@github.com:danielbryantuk/emojivoto.git
@@ -209,6 +209,6 @@ Once you have your local development environment configured for fast feedback, y
 	```
 7. Ask your teammates to refresh their view of the application and instantly see the local changes you’ve made.
 
-## <img class="os-logo" src="../../../images/logo.png"/> What's Next?
+## <img class="os-logo" src="../../images/logo.png"/> What's Next?
 
 Learn more about creating intercepts in your Telepresence environment with the [Intercept a service in your own environment](../../howtos/intercepts/) documentation.

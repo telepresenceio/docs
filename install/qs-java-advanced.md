@@ -122,6 +122,6 @@ Once you have your local development environment configured for fast feedback, y
 5. Make a small change in your local code that causes a visible change that you can see when accessing your app. Build your service to trigger a reload within the container.
 6. Ask your teammates to refresh their view of the application and instantly see the local changes you’ve made.
 
-## <img class="os-logo" src="../../../images/logo.png"/> What's Next?
+## <img class="os-logo" src="../../images/logo.png"/> What's Next?
 
 Now that you've created a complete Kubernetes development environment, learn more about how to [manage your environment in Ambassador Cloud](howtos/environments/) or how to [create Preview URLs in Telepresence](../../../../../telepresence/latest/howtos/preview-urls/).
