@@ -179,7 +179,7 @@ Refresh your view of the app at ${INGRESS_IP}.
 	# happy coding!
 
 	```
-8. Run the setup-dev-env.sh script locally. Use the $AMBASSADOR_API_KEY you created from Docker in the [emojivoto application tutorial](../qs-go/) or the [Ambassador Cloud quick start guide](../../../../cloud/latest/service-catalog/quick-start/).
+8. Run the setup-dev-env.sh script locally. Use the $AMBASSADOR_API_KEY you created from Docker in the [emojivoto application tutorial](../qs-go/) or in [Ambassador Cloud](https://app.getambassador.io/cloud/services/).
 	```
 	export AMBASSADOR_API_KEY=<your key>
 	git clone git@github.com:danielbryantuk/emojivoto.git
