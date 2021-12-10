@@ -83,9 +83,9 @@ Once you have the development container running, you can integrate your local de
 	$ docker cp $CONTAINER_ID:/opt/telepresence-demo-cluster.yaml ./emojivoto_k8s_context.yaml
 	```
 3. Run `telepresence intercept your-service-name` to reroute traffic for the service you’re working on:
-```
-$ telepresence intercept voting --port 8081:8080
-```
+	```
+	$ telepresence intercept voting --port 8081:8080
+	```
 4. Make a small change in your local code that will cause a visible change that you will be able to see when accessing your app. Build your service to trigger a reload within the container.
 5. Now visit your ${INGRESS_IP} and view the change. 
  Notice the instant feedback of a local change combined with being able to access the remote dependencies!
@@ -179,7 +179,7 @@ Refresh your view of the app at ${INGRESS_IP}.
 	# happy coding!
 
 	```
-8. Run the setup-dev-env.sh script locally. Use the $AMBASSADOR_API_KEY you created from Docker in the [emojivoto application tutorial](../qs-go/) or in [Ambassador Cloud](https://app.getambassador.io/cloud/services/).
+8. Run the setup-dev-env.sh script locally. Use the $AMBASSADOR_API_KEY you created from Docker in the [emojivoto application tutorial](../../quick-start/go/) or in [Ambassador Cloud](https://app.getambassador.io/cloud/services/).
 	```
 	export AMBASSADOR_API_KEY=<your key>
 	git clone git@github.com:danielbryantuk/emojivoto.git

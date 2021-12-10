@@ -70,7 +70,7 @@ After you finish your deployment, you need to configure a copy of a single servi
 
 Once you have the development container running, you can integrate your local development environment and the remote cluster. This enables you to access your remote app and instantly see any local changes you have made using your development container.
 
-1. First, download the latest [Telepresence binary](../../../../../telepresence/latest/install/) for your operating system and run `telepresence connect`.
+1. First, download the latest [Telepresence binary](../../install) for your operating system and run `telepresence connect`.
  Your local service is now able to interact with services and dependencies in your remote cluster.
  For example, you can run `curl remote-service-name.namespace:port/path` and get an instant response locally in the same way you would in a remote cluster.  
 2. Run `telepresence intercept your-service-name` to reroute traffic for the service you’re working on.
@@ -124,4 +124,4 @@ Once you have your local development environment configured for fast feedback, y
 
 ## <img class="os-logo" src="../../images/logo.png"/> What's Next?
 
-Now that you've created a complete Kubernetes development environment, learn more about how to [manage your environment in Ambassador Cloud](howtos/environments/) or how to [create Preview URLs in Telepresence](../../../../../telepresence/latest/howtos/preview-urls/).
+Now that you've created a complete Kubernetes development environment, learn more about how to [manage your environment in Ambassador Cloud](/docs/cloud/latest/service-catalog/howtos/cells) or how to [create Preview URLs in Telepresence](/docs/telepresence/latest/howtos/preview-urls/).
