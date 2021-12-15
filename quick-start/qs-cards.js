@@ -28,7 +28,7 @@ export default function CenteredGrid() {
         <Grid item xs={4}>
           <Paper variant="outlined" className={classes.paper}>
             <Typography variant="h6" component="h2">
-              <a href="../../install/qs-java-advanced/">
+              <a href="../qs-java/">
                 <b>Create a Local K8s Dev Environment</b>
               </a>
             </Typography>
