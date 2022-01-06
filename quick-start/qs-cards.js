@@ -33,7 +33,8 @@ export default function CenteredGrid() {
               </a>
             </Typography>
             <Typography variant="body2" component="p">
-              Read the advanced guide on how to create your own complete Kubernetes development environment.
+              Read the advanced guide on how to create your own complete
+              Kubernetes development environment.
             </Typography>
           </Paper>
         </Grid>
