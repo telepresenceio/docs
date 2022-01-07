@@ -32,7 +32,6 @@ import { UserInterceptCommand, DemoClusterWarning } from '../../../../../src/com
 
 </div>
 
-
 In this guide, we'll give you a hands-on tutorial with Telepresence. To go through this tutorial, the only thing you'll need is a computer that runs Docker Desktop >=20.10.7. We'll give you a pre-configured remote Kubernetes cluster and a Docker container to run locally.
 
 If you don't have Docker Desktop already installed, go to the [Docker download page](https://www.docker.com/get-started) and install Docker.
