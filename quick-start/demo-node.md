@@ -32,7 +32,6 @@ import { UserInterceptCommand, DemoClusterWarning } from '../../../../../src/com
 
 </div>
 
-THIS IS A TEST <img class="os-logo" src="broken_link_image.png"/>
 
 In this guide, we'll give you a hands-on tutorial with Telepresence. To go through this tutorial, the only thing you'll need is a computer that runs Docker Desktop >=20.10.7. We'll give you a pre-configured remote Kubernetes cluster and a Docker container to run locally.
 
