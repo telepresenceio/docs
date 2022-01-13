@@ -55,9 +55,8 @@ intercept that is often more useful than a global intercept.
    and make sure the one you want to intercept is listed.
 
    For example, this would confirm that `example-service` can be intercepted by Telepresence:
-=======
+
 2. Enter `telepresence list` and make sure the service you want to intercept is listed. For example:
->>>>>>> c4452984c8ffbc6086fdc6177dc6eb998fc5ddb9
 
    ```console
    $ telepresence list
@@ -198,8 +197,8 @@ You can now:
 - Set breakpoints in your IDE to investigate bugs.
 
 ...and all of this **without impacting your teammates!**
-## <img class="os-logo" src="../../images/logo.png"/> What's Next? {#whats-next}
+   <Alert severity="info">
 
-<QSCards/>
-=======
->>>>>>> c4452984c8ffbc6086fdc6177dc6eb998fc5ddb9
+    **Didn't work?** Make sure the port you're listening on matches the one you specified when you created your intercept.
+
+   </Alert>
