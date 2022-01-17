@@ -8,7 +8,7 @@ import QSCards from './qs-cards'
 
 <div class="docs-language-toc">
 
-- <a href="../qs-node/11" title="Node.js">Node.js</a>
+- <a href="../qs-node/" title="Node.js">Node.js</a>
 - <a href="../qs-go/" title="Go" class="active">Go</a>
 - <a href="../qs-java/" title="Java">Java</a>
 - <a href="../qs-python/" title="Python (Flask)">Python (Flask)</a>
