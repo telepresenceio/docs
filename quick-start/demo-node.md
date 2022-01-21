@@ -18,9 +18,7 @@ import QSCards from './qs-cards';
 import { UserInterceptCommand, DemoClusterWarning } from '../../../../../src/components/Docs/Telepresence';
 
 # Telepresence Quick Start
-<a href="https://github.com/datawire/ambassador-docs/blob/master/docs/emissary/2.1/licenses.md"> this is a test </a>
-<a href="https://www.getambassador.io/docs/emissary/latest/licenses/"> this is a test </a>
-<a href="https://www.broken_link_on_porpuese.blc"> this is a test </a>
+
 <div class="docs-article-toc">
 <h3>Contents</h3>
 
