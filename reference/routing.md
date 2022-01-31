@@ -7,7 +7,7 @@ When requesting a connection to a host, the IP of that host must be determined. 
 [local DNS configuration](../config/#dns) 
 
 #### Cluster side DNS lookups
-The cluster side host lookup will be performed by the traffic-manager unless the client has an active intercept, in which case, the agent performing that intercept will be responsible for doing it. If the client has multiple intercepts, then all of them will be asked to perform the lookup, and the response to the client will contain the unique sum of IPs that they produce. It's therefore important to never have multiple intercepts that span more than one namespace[<sup>[1](#namespacelimit)</sup>]. The reason for asking all of them is that the workstation currently impersonates multiple containers, and it is not possible to determine on behalf of what container the lookup request is made.
+The cluster side host lookup will be performed by the traffic-manager unless the client has an active intercept, in which case, the agent performing that intercept will be responsible for doing it. If the client has multiple intercepts, then all of them will be asked to perform the lookup, and the response to the client will contain the unique sum of IPs that they produce. It's therefore important to never have multiple intercepts that span more than one namespace[<sup>[1](#namespacelimit)</sup>] running concurrently on the same workstation because that would logically put the workstation in several namespaces and make the DNS resolution ambiguous. The reason for asking all of them is that the workstation currently impersonates multiple containers, and it is not possible to determine on behalf of what container the lookup request is made.
 
 #### macOS resolver
 This resolver hooks into the macOS DNS system by creating files under `/etc/resolver`. Those files correspond to some domain and contain the port number of the Telepresence resolver. Telepresence creates one such file for each of the currently mapped namespaces and `include-suffixes` option. The file `telepresence.local` contains a search path that is configured based on current intercepts so that single label names can be resolved correctly.
@@ -65,5 +65,5 @@ The traffic-manager and traffic-agent are mutually responsible for setting up th
 In 2.3.2, this changes, so that the traffic-agent instead creates a tunnel to the traffic-manager using the already existing gRPC API connection. The traffic-manager then forwards that using another tunnel to the workstation. This is completely invisible to other service meshes and is therefore much easier to configure.
 
 ##### Footnotes:
-<p><a name="namespacelimit">1</a>: A future version of Telepresence will not allow concurrent intercepts that span multiple namespaces.</p>
+<p><a name="namespacelimit">1</a>: A future version of Telepresence will not allow that the same workstation creates concurrent intercepts that span multiple namespaces.</p>
 <p><a name="servicesubnet">2</a>: The error message from an attempt to create a service in a bad subnet contains the service subnet. The trick of creating a dummy service is currently the only way to get Kubernetes to expose that subnet.</p>
