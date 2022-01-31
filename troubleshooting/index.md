@@ -96,3 +96,23 @@ but one more thing must be done before it works OK:
 5. Try a mount (or an intercept that performs a mount). It will fail because you need to give permission to “Benjamin Fleischer” to execute a kernel extension (a pop-up appears that takes you to the system preferences).
 6. Approve the needed permission
 7. Reboot your computer.
+
+### Daemon service did not start
+
+An attempt to do `telepresence connect` results in the error message `daemon service did not start: timeout while waiting for daemon to start` and
+the logs show no helpful error.
+
+The likely cause of this is that the user lack permission to run `sudo --preserve-env`. Here is a workaround for this problem. Edit the
+sudoers file with:
+
+```command
+$ sudo visudo
+```
+
+and add the following line:
+
+```
+<your username> ALL=(ALL) NOPASSWD: SETENV: /usr/local/bin/telepresence
+```
+
+DO NOT fix this by making the telepresence binary a SUID root. It must only run as root when invoked with `--daemon-foreground`.

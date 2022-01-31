@@ -18,28 +18,36 @@ When you connect to your cluster, the background daemon on your machine runs and
 
 1. Run `telepresence connect` and enter your password to run the daemon.
 
-  ```
+  ```console
   $ telepresence connect
-  Launching Telepresence Daemon v2.3.7 (api v3)
+  Launching Telepresence Daemon v2.4.10 (api v3)
   Need root privileges to run "/usr/local/bin/telepresence daemon-foreground /home/<user>/.cache/telepresence/logs '' ''"
   [sudo] password:
-  Connecting to traffic manager...
+  Launching Telepresence Root Daemon
+  Launching Telepresence User Daemon
   Connected to context default (https://<cluster public IP>)
   ```
 
+Check this [FAQ entry](../../troubleshooting#daemon-service-did-not-start) in case the daemon does not start.
+
 2. Run `telepresence status` to confirm connection to your cluster and that it is proxying traffic.
 
-  ```
+  ```console
   $ telepresence status
   Root Daemon: Running
-    Version     : v2.3.7 (api 3)
-    Primary DNS : ""
-    Fallback DNS: ""
+    Version   : v2.4.10 (api 3)
+    DNS       :
+      Remote IP       : <cluster IP>
+      Exclude suffixes: [.arpa .com .io .net .org .ru]
+      Include suffixes: []
+      Timeout         : 4s
+    Also Proxy : (0 subnets)
+    Never Proxy: (1 subnets)
   User Daemon: Running
-    Version           : v2.3.7 (api 3)
+    Version           : v2.4.10 (api 3)
     Ambassador Cloud  : Logged out
     Status            : Connected
-    Kubernetes server : https://<cluster public IP>
+    Kubernetes server : <cluster external URL>
     Kubernetes context: default
     Telepresence proxy: ON (networking to the cluster is enabled)
     Intercepts        : 0 total
@@ -47,7 +55,7 @@ When you connect to your cluster, the background daemon on your machine runs and
 
 3. Access your service by name with `curl web-app.emojivoto:80`. Telepresence routes the request to the cluster, as if your laptop is actually running in the cluster.
 
-  ```
+  ```console
   $ curl web-app.emojivoto:80
   <!DOCTYPE html>
   <html>
@@ -59,9 +67,10 @@ When you connect to your cluster, the background daemon on your machine runs and
 
 If you terminate the client with `telepresence quit` and try to access the service again, it will fail because traffic is no longer proxied from your laptop.
 
-  ```
-    $ telepresence quit
-    Telepresence Daemon quitting...done
+  ```console
+  $ telepresence quit
+  Telepresence Root Daemon quitting... done
+  Telepresence User Daemon quitting... done
   ```  
 
 <Alert severity="info">When using Telepresence in this way, you need to access services with the namespace qualified DNS name (<code>&lt;service name&gt;.&lt;namespace&gt;</code>) before you start an intercept. After you start an intercept, only  <code>&lt;service name&gt;</code> is required. Read more about these differences in the  <a href="../../quick-start/demo-node/">DNS resolution reference guide</a>.</Alert>
@@ -78,8 +87,8 @@ When you develop on isolated apps or on a virtualized container, you don't need 
 
 To control outbound connectivity to specific namespaces, add the `--local-only` flag:
 
-  ```
-    $ telepresence intercept <deployment name> --namespace <namespace> --local-only
+  ```console
+  $ telepresence intercept <deployment name> --namespace <namespace> --local-only
   ```
 The resources in the given namespace can now be accessed using unqualified names as long as the intercept is active. 
 You can deactivate the intercept with `telepresence leave <deployment name>`. This removes unqualified name access.

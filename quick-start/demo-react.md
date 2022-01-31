@@ -96,6 +96,8 @@ Telepresence connects your local workstation to a remote Kubernetes cluster.
     Connected to context default (https://<cluster-public-IP>)
   ```
 
+Check this [FAQ entry](../../troubleshooting#daemon-service-did-not-start) in case the daemon does not start.
+
 2. Test that Telepresence is working properly by connecting to the Kubernetes API server:
 `curl -ik https://kubernetes.default`
 

@@ -77,9 +77,7 @@ The cluster must also have access to an external registry in order to be able to
 
 ** Why does running Telepresence require sudo access for the local daemon?**
 
-The local daemon needs sudo to create iptable mappings. Telepresence uses this to create outbound access from the laptop to the cluster.
-
-On Fedora, Telepresence also creates a virtual network device (a TUN network) for DNS routing. That also requires root access.
+Telepresence creates, and manages, a virtual network device (a TUN network) for routing of outbound traffic to the cluster and perform DNS resolution. That requires elevated access.
 
 ** What components get installed in the cluster when running Telepresence?**
 
