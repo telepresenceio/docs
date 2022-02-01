@@ -17,8 +17,8 @@ Use `telepresence login` to explicitly authenticate with [Ambassador
 Cloud](https://www.getambassador.io/docs/cloud).  Unless the
 [`skipLogin` option](../../config) is set, other commands will
 automatically invoke the `telepresence login` interactive login
-procedure as nescessary, so it is rarely nescessary to explicitly run
-`telepresence login`; it should only be truly nescessary to explictly
+procedure as necessary, so it is rarely necessary to explicitly run
+`telepresence login`; it should only be truly necessary to explictly
 run `telepresence login` when you require a non-interactive login.
 
 The normal interactive login procedure involves launching a web
