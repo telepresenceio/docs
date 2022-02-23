@@ -39,13 +39,17 @@ docDescription: >-
 changelog: https://github.com/telepresenceio/telepresence/blob/$branch$/CHANGELOG.md
 
 items:
-  - version: 2.5.4
-    date: "TBD"
+  - version: 2.5.2
+    date: "2022-02-23"
     notes:
-      - type: change
-        title: Update status command output
+      - type: bugfix
+        title: DNS server bugfix
         body: >-
-          The status command includes the install id, user id and account id in its result, and can print output as JSON.
+          Fixed a bug where Telepresence would use the last server in resolv.conf
+      - type: change
+        title: Remove user prompt
+        body: >-
+          Removed the user prompt before downloading the enhanced daemon
   - version: 2.5.1
     date: "2022-02-19"
     notes:
@@ -56,13 +60,6 @@ items:
   - version: 2.5.0
     date: "2022-02-18"
     notes:
-      - type: feature
-        title: Telepresence Pro Daemon
-        body: >-
-          Telepresence now supports a Telepresence Pro Daemon extension which
-          enables users to start intercepts via Ambassador Cloud.
-        docs: install/telepresence-pro
-        image: telepresence-2.5.0-pro-daemon.png
       - type: feature
         title: Intercept specific endpoints
         body: >-
@@ -75,12 +72,6 @@ items:
           The flag <code>--http-meta</code> can be used to declare metadata key value pairs that will be returned by the Telepresence rest
           API endpoint <code>/intercept-info</code>
         docs: reference/restapi#intercept-info
-      - type: change
-        title: --http-match renamed to --http-header
-        body: >-
-          The `telepresence intercept` command line flag <code>--http-match</code> was renamed to <code>--http-header</code>. The old flag
-          still works, but it is deprecated and doesn't show up in the help.
-        docs: concepts/intercepts#creating-and-using-personal-intercepts
       - type: change
         title: Client RBAC watch
         body: >-
