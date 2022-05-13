@@ -8,7 +8,7 @@
 You can make use of the `telepresence test-vpn` command to diagnose issues
 with your VPN setup.
 This guides you through a series of steps to figure out if there are
-conflicts between your VPN configuration and telepresence.
+conflicts between your VPN configuration and [telepresence](/products/telepresence/).
 
 ### Prerequisites
 
@@ -21,12 +21,12 @@ You may need to configure this on both the client and server sides.
 Client-side, taking the Tunnelblick client as an example, you must ensure that
 the `Route all IPv4 traffic through the VPN` tickbox is not enabled:
 
-<img src="../../images/tunnelblick.png" />
+<img src="../../images/tunnelblick.png" alt="Tunnelblick" />
 
 Server-side, taking AWS' ClientVPN as an example, you simply have to enable
 split-tunnel mode:
 
-<img src="../../images/split-tunnel.png" />
+<img src="../../images/split-tunnel.png" alt="Modify client VPN Endpoint" />
 
 In AWS, this setting can be toggled without reprovisioning the VPN. Other cloud providers may work differently.
 
@@ -111,7 +111,7 @@ hosts from being masked.
 This might be particularly important for DNS resolution. In an AWS ClientVPN VPN it is often
 customary to set the `.2` host as a DNS server (e.g. `10.0.0.2` in this case):
 
-<img src="../../images/vpn-dns.png" />
+<img src="../../images/vpn-dns.png" alt="Modify Client VPN Endpoint" />
 
 If this is the case for your VPN, you should place the DNS server in the never-proxy list for your
 cluster. In your kubeconfig file, add a `telepresence` extension like so:
@@ -137,7 +137,7 @@ that the VPN routes:
                 * If this is not possible, consider shrinking the mask of the 10.0.0.0/16 CIDR (e.g. from /16 to /8), or disabling split-tunneling
 ```
 
-Typically, this means that pods within `10.0.0.0/8` are not accessible while the VPN is
+Typically this means that pods within `10.0.0.0/8` are not accessible while the VPN is
 connected.
 
 As with the first case, the ideal resolution is to move the pods away, but this may not always

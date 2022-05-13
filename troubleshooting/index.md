@@ -26,18 +26,13 @@ If your ingress is set to redirect HTTP requests to HTTPS and your web app uses 
 
 There are a few different issues that could arise when working with a VPN. Please see the [dedicated page](../reference/vpn) on Telepresence and VPNs to learn more on how to fix these.
 
-## Connecting to a cluster hosted in a VM on the workstation doesn't work
-
-The cluster probably has access to the host's network and gets confused when it is mapped by Telepresence.
-Please check the [cluster in hosted vm](../howtos/cluster-in-vm) for more details.
-
 ## Your GitHub organization isn't listed
 
 Ambassador Cloud needs access granted to your GitHub organization as a
 third-party OAuth app.  If an organization isn't listed during login
 then the correct access has not been granted.
 
-The quickest way to resolve this is to go to the **GitHub menu** →
+The quickest way to resolve this is to go to the **Github menu** →
 **Settings** → **Applications** → **Authorized OAuth Apps** →
 **Ambassador Labs**.  An organization owner will have a **Grant**
 button, anyone not an owner will have **Request** which sends an email
@@ -57,13 +52,13 @@ permissions that were granted.
 
 GitHub's documentation provides more detail about [managing access granted to third-party applications](https://docs.github.com/en/github/authenticating-to-github/connecting-with-third-party-applications) and [approving access to apps](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
 
-### Granting or requesting access on initial login
+## Granting or requesting access on initial login
 
 When using GitHub as your identity provider, the first time you log in
 to Ambassador Cloud GitHub will ask to authorize Ambassador Labs to
 access your organizations and certain user data.
 
-<img src="../images/github-login.png" width="50%"/>
+<img src="../images/github-login.png" width="50%" alt="Authorize Ambassador labs form" />
 
 Any listed organization with a green check has already granted access
 to Ambassador Labs (you still need to authorize to allow Ambassador
@@ -80,7 +75,7 @@ to reach out to the owner.
 Once approval is granted, you will have to log out of Ambassador Cloud
 then back in to select the organization.
 
-### Volume mounts are not working on macOS
+## Volume mounts are not working on macOS
 
 It's necessary to have `sshfs` installed in order for volume mounts to work correctly during intercepts. Lately there's been some issues using `brew install sshfs` a macOS workstation because the required component `osxfuse` (now named `macfuse`) isn't open source and hence, no longer supported. As a workaround, you can now use `gromgit/fuse/sshfs-mac` instead. Follow these steps:
 
@@ -101,3 +96,11 @@ but one more thing must be done before it works OK:
 5. Try a mount (or an intercept that performs a mount). It will fail because you need to give permission to “Benjamin Fleischer” to execute a kernel extension (a pop-up appears that takes you to the system preferences).
 6. Approve the needed permission
 7. Reboot your computer.
+
+## Authorization for Preview URLs
+Services that require authentication may not function correctly with preview URLs. When accessing a preview URL, it is necessary to configure your intercept to use custom authentication headers for the preview URL. If you don't, you may receive an unauthorized response or be redirected to the login page for Ambassador Cloud.
+
+You can accomplish this by using a browser extension such as the `ModHeader extension` for [Chrome](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj) 
+or [Firefox](https://addons.mozilla.org/en-CA/firefox/addon/modheader-firefox/).
+
+It is important to note that Ambassador Cloud does not support OAuth browser flows when accessing a preview URL, but other auth schemes such as Basic access authentication and session cookies will work.

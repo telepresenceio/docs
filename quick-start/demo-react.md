@@ -1,5 +1,5 @@
 ---
-description: "Install Telepresence and learn to use it to intercept services running in your Kubernetes cluster, speeding up local development and debugging."
+description: "Telepresence Quick Start - React. In this guide we'll give you everything you need in a preconfigured demo cluster: the Telepresence CLI, a config file for..."
 ---
 
 import Alert from '@material-ui/lab/Alert';
@@ -19,11 +19,11 @@ import { UserInterceptCommand } from '../../../../../src/components/Docs/Telepre
 * [5. Run a service on your laptop](#5-run-a-service-on-your-laptop)
 * [6. Make a code change](#6-make-a-code-change)
 * [7. Intercept all traffic to the service](#7-intercept-all-traffic-to-the-service)
-* [What's next?](#img-classos-logo-srcimageslogopng-whats-next)
+* [What's next?](#img-classos-logo-srcimageslogopng-alttelepresence-logo--whats-next)
 
 </div>
 
-In this guide we'll give you **everything you need in a preconfigured demo cluster:** the Telepresence CLI, a config file for connecting to your demo cluster, and code to run a cluster service locally.
+In this guide we'll give you **everything you need in a preconfigured demo cluster:** the [Telepresence](/products/telepresence/) CLI, a config file for connecting to your demo cluster, and code to run a cluster service locally.
 
 <Alert severity="info">
     While Telepresence works with any language, this guide uses a sample app with a frontend written in React. We have a version with a <a href="../demo-node/">Node.js backend</a> if you prefer.
@@ -83,7 +83,7 @@ In this guide we'll give you **everything you need in a preconfigured demo clust
 
 ## 2. Test Telepresence
 
-Telepresence connects your local workstation to a remote Kubernetes cluster.
+[Telepresence](../../reference/client/login/) connects your local workstation to a remote Kubernetes cluster.
 
 1. Connect to the cluster (this requires **root** privileges and will ask for your password):
 `telepresence connect`
@@ -122,7 +122,7 @@ Telepresence connects your local workstation to a remote Kubernetes cluster.
 Your local workstation may not have the compute or memory resources necessary to run all the services in a multi-service application. In this example, we’ll show you how Telepresence can give you a fast development loop, even in this situation.
 
 <!--
-We'll use a sample app that is already installed in your demo cluster.  Let's take a quick look at its architecture before continuing.
+We'll use a sample app that is already installed in your demo cluster.  Let's take a quick look at it's architecture before continuing.
 -->
 
 1. Clone the emojivoto app:
@@ -252,6 +252,6 @@ Next, we’ll create an intercept. An intercept is a rule that tells Telepresenc
   With Telepresence, these changes happen instantly.
 </Alert>
 
-## <img class="os-logo" src="../../images/logo.png"/> What's Next?
+## <img class="os-logo" src="../../images/logo.png" alt="Telepresence logo" /> What's Next?
 
 <QSCards/>

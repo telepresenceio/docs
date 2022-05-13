@@ -16,7 +16,7 @@
       link: concepts/devworkflow
     - title: The developer experience and the inner dev loop
       link: concepts/devloop
-    - title: "Making the remote local: Faster feedback, collaboration and debugging"
+    - title: 'Making the remote local: Faster feedback, collaboration and debugging'
       link: concepts/faster
     - title: Context propagation
       link: concepts/context-prop
@@ -90,3 +90,5 @@
   link: community
 - title: Release Notes
   link: release-notes
+- title: Licenses
+  link: licenses
