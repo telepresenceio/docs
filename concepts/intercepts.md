@@ -211,7 +211,7 @@ The following flags are available:
     ```shell
     telepresence intercept SERVICENAME --http-path-equal=/api/version --http-header=auto
     ```
-   or, since `--http-header=auto` is the implicit when using `--http` options, just:
+    or, since `--http-header=auto` is the implicit when using `--http` options, just:
     ```shell
     telepresence intercept SERVICENAME --http-path-equal=/api/version
     ```

@@ -1,6 +1,6 @@
 # Migrate from legacy Telepresence
 
-Telepresence (formerly referenced as Telepresence 2, which is the current major version) has different mechanics and requires a different mental model from [legacy Telepresence 1](https://www.telepresence.io/docs/v1/) when working with local instances of your services.
+[Telepresence](/products/telepresence/) (formerly referenced as Telepresence 2, which is the current major version) has different mechanics and requires a different mental model from [legacy Telepresence 1](https://www.telepresence.io/docs/v1/) when working with local instances of your services.
 
 In legacy Telepresence, a pod running a service was swapped with a pod running the Telepresence proxy. This proxy received traffic intended for the service, and sent the traffic onward to the target workstation or laptop. We called this mechanism "swap-deployment".
 
@@ -82,7 +82,7 @@ Telepresence will include output letting you know that the flag has gone away. F
 Telepresence can't translate yet, it will let you know that that flag is "unsupported".
 
 If Telepresence is missing any flags or functionality that is integral to your usage, please let us know
-by [creating an issue](https://github.com/telepresenceio/telepresence/issues) and/or talking to us on our [Slack channel](https://a8r.io/Slack)!
+by [creating an issue](https://github.com/telepresenceio/telepresence/issues) and/or talking to us on our [Slack channel](http://a8r.io/slack)!
 
 ## Telepresence changes
 

@@ -29,7 +29,7 @@ import QSCards from './qs-cards'
 * [5. Intercept all traffic to the service](#5-intercept-all-traffic-to-the-service)
 * [6. Make a code change](#6-make-a-code-change)
 * [7. Create a Preview URL](#7-create-a-preview-url)
-* [What's next?](#img-classos-logo-srcimageslogopng-whats-next)
+* [What's next?](#img-classos-logo-srcimageslogopng-alttelepresence-logo--whats-next)
 
 </div>
 
@@ -48,7 +48,7 @@ users should have no problem substituting in the `oc` command instead.
     <strong>Need a cluster?</strong> We provide free demo clusters preconfigured to follow this quick start. <a href="../demo-node/">Switch over to that version of the guide here</a>.
 </Alert>
 
-If you have used Telepresence previously, please first reset your Telepresence deployment with:
+If you have used [Telepresence](/products/telepresence/) previously, please first reset your Telepresence deployment with:
 `telepresence uninstall --everything`.
 
 ## 1. Install the Telepresence CLI
@@ -184,7 +184,7 @@ Telepresence connects your local workstation to a remote Kubernetes cluster.
 
 ## 3. Install a sample Go application
 
-Your local workstation may not have the compute or memory resources necessary to run all the services in a multiservice application. In this example, we’ll show you how Telepresence can give you a fast development loop, even in this situation.
+Your local workstation may not have the compute or memory resources necessary to run all the services in a multi-service application. In this example, we’ll show you how Telepresence can give you a fast development loop, even in this situation.
 
 <Alert severity="info">
     While Telepresence works with any language, this guide uses a sample app written in Go. We have versions in <a href="../qs-python/">Python (Flask)</a>, <a href="../qs-python-fastapi/">Python (FastAPI)</a>, <a href="../qs-java/">Java</a>, and <a href="../qs-node/">NodeJS</a> if you prefer.
@@ -346,7 +346,7 @@ easily share the services you’re working on with your teammates.
   ```
     $ telepresence intercept dataprocessingservice --port 3000
 
-      To create a preview URL, telepresence needs to know how requests enter
+      To create a preview URL, telepresence needs to know how requests enter 
 	    your cluster. Please Select the ingress to use.
 
       1/4: What's your ingress' IP address?
@@ -390,6 +390,6 @@ Normal traffic coming to your app gets the <strong style="color:green">green</st
   The <strong>Preview URL</strong> now shows exactly what is running on your local laptop -- in a way that can be securely shared with anyone you work with.
 </Alert>
 
-## <img class="os-logo" src="../../images/logo.png"/> What's Next?
+## <img class="os-logo" src="../../images/logo.png" alt="Telepresence logo" /> What's Next?
 
 <QSCards/>

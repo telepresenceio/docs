@@ -1,5 +1,5 @@
 ---
-description: "Install Telepresence and learn to use it to intercept services running in your Kubernetes cluster, speeding up local development and debugging."
+description: "Install Telepresence Quick Start - Node.js  and learn to use it to intercept services running in your Kubernetes cluster. Speeding up local development and..."
 ---
 
 import Alert from '@material-ui/lab/Alert';
@@ -29,7 +29,7 @@ import QSCards from './qs-cards'
 * [5. Intercept all traffic to the service](#5-intercept-all-traffic-to-the-service)
 * [6. Make a code change](#6-make-a-code-change)
 * [7. Create a Preview URL](#7-create-a-preview-url)
-* [What's next?](#img-classos-logo-srcimageslogopng-whats-next)
+* [What's next?](#img-classos-logo-srcimageslogopng-alttelepresence-logo--whats-next)
 
 </div>
 
@@ -170,7 +170,7 @@ Telepresence connects your local workstation to a remote Kubernetes cluster.
 
 ## 3. Install a sample Node.js application
 
-Your local workstation may not have the compute or memory resources necessary to run all the services in a multiservice application. In this example, we’ll show you how Telepresence can give you a fast development loop, even in this situation.
+Your local workstation may not have the compute or memory resources necessary to run all the services in a multi-service application. In this example, we’ll show you how Telepresence can give you a fast development loop, even in this situation.
 
 <Alert severity="info">
     While Telepresence works with any language, this guide uses a sample app written in Node.js. We have versions in <a href="../qs-go/">Go</a>, <a href="../qs-java/">Java</a>,<a href="../qs-python/">Python using Flask</a>, and <a href="../qs-python-fastapi/">Python using FastAPI</a> if you prefer.
@@ -334,7 +334,7 @@ easily share the services you’re working on with your teammates.
   ```
     $ telepresence intercept dataprocessingservice --port 3000
 
-      To create a preview URL, telepresence needs to know how requests enter
+      To create a preview URL, telepresence needs to know how requests enter 
 	    your cluster. Please Select the ingress to use.
 
       1/4: What's your ingress' IP address?
@@ -378,6 +378,6 @@ Normal traffic coming to your app gets the <strong style="color:green">green</st
   The <strong>Preview URL</strong> now shows exactly what is running on your local laptop -- in a way that can be securely shared with anyone you work with.
 </Alert>
 
-## <img class="os-logo" src="../../images/logo.png"/> What's Next?
+## <img class="os-logo" src="../../images/logo.png" alt="Telepresence logo" /> What's Next?
 
 <QSCards/>

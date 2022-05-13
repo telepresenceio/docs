@@ -1,6 +1,6 @@
 # Running Telepresence inside a container
 
-It is sometimes desirable to run Telepresence inside a container. One reason can be to avoid any side effects on the workstation's network, another can be to establish multiple sessions with the traffic manager, or even work with different clusters simultaneously.
+It is sometimes desirable to run [Telepresence](/products/telepresence/) inside a container. One reason can be to avoid any side effects on the workstation's network, another can be to establish multiple sessions with the traffic manager, or even work with different clusters simultaneously.
 
 ## Building the container
 

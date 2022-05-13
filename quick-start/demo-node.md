@@ -28,11 +28,11 @@ import { UserInterceptCommand, DemoClusterWarning } from '../../../../../src/com
 * [4. Testing our fix](#4-testing-our-fix)
 * [5. Preview URLs](#5-preview-urls)
 * [6. How/Why does this all work](#6-howwhy-does-this-all-work)
-* [What's next?](#img-classos-logo-srcimageslogopng-whats-next)
+* [What's next?](#img-classos-logo-srcimageslogopng-alttelepresence-logo--whats-next)
 
 </div>
 
-In this guide, we'll give you a hands-on tutorial with Telepresence. To go through this tutorial, the only thing you'll need is a computer that runs Docker Desktop >=20.10.7. We'll give you a pre-configured remote Kubernetes cluster and a Docker container to run locally.
+In this guide, we'll give you a hands-on tutorial with [Telepresence](/products/telepresence/). To go through this tutorial, the only thing you'll need is a computer that runs Docker Desktop >=20.10.7. We'll give you a pre-configured remote Kubernetes cluster and a Docker container to run locally.
 
 If you don't have Docker Desktop already installed, go to the [Docker download page](https://www.docker.com/get-started) and install Docker.
 
@@ -42,7 +42,7 @@ If you don't have Docker Desktop already installed, go to the [Docker download p
 
 ## 1. Get a free remote cluster
 
-Telepresence connects your local workstation with a remote Kubernetes cluster. In this tutorial, we'll start with a pre-configured, remote cluster.
+[Telepresence](/docs/telepresence/) connects your local workstation with a remote Kubernetes cluster. In this tutorial, we'll start with a pre-configured, remote cluster.
 
 1. <Login urlParams="docs_source=telepresence-quick-start&login_variant=free-cluster-activation" origin="telepresence-novice-quick-start" />
 2. Go to the <DCPLink>Service Catalog</DCPLink> to see all the services deployed on your cluster.
@@ -70,7 +70,7 @@ The remote cluster is running the Emojivoto application, which consists of four 
 
 ## 3. Set up your local development environment
 
-We'll set up a development environment locally on your workstation. We'll then use Telepresence to connect this local development environment to the remote Kubernetes cluster. To save time, the development environment we'll use is pre-packaged as a Docker container.
+We'll set up a development environment locally on your workstation. We'll then use [Telepresence](../../reference/inside-container/) to connect this local development environment to the remote Kubernetes cluster. To save time, the development environment we'll use is pre-packaged as a Docker container.
 
 1. Run the Docker container locally, by running this command inside your local terminal:
 
@@ -134,14 +134,14 @@ Now you're able to share your fix in your local environment with your team!
 </Alert>
 
 <Alert severity="info">
-    To get more information regarding Preview URLs and intercepts, visit the <DCPLink>Developer Control Plane </DCPLink>.
+    To get more information regarding Preview URLs and intercepts, visit <DCPLink>Ambassador Cloud</DCPLink>.
 </Alert>
 
 </div>
 
 ## 6. How/Why does this all work?
 
-Telepresence works by deploying a two-way network proxy in a pod running in a Kubernetes cluster. This proxy can intercept traffic meant for the service and reroute it to a local copy, which is ready for further (local) development.
+[Telepresence](../qs-go/) works by deploying a two-way network proxy in a pod running in a Kubernetes cluster. This proxy can intercept traffic meant for the service and reroute it to a local copy, which is ready for further (local) development.
 
 Intercepts and preview URLs are functions of Telepresence that enable easy local development from a remote Kubernetes cluster and offer a preview environment for sharing and real-time collaboration.
 
@@ -149,7 +149,7 @@ Telepresence also uses custom headers and header propagation for controllable in
 
 Preview URLs, when created, generate an ingress request containing a custom header with a token (the context). Telepresence sends this token to Ambassador Cloud with other information about the preview. Visiting the preview URL directs the user to Ambassador Cloud, which proxies the user to the cluster ingress with the token header injected into the request. The request carrying the header is routed in the cluster to the appropriate pod (the propagation). The Traffic Agent on the service pod sees the header and intercepts the request, redirecting it to the local developer machine that ran the intercept.
 
-## <img class="os-logo" src="../../images/logo.png"/> What's Next?
+## <img class="os-logo" src="../../images/logo.png" alt="Telepresence logo" /> What's Next?
 
 
 You've intercepted a service in one of our demo clusters, now you can use Telepresence to [intercept a service in your own environment](https://www.getambassador.io/docs/telepresence/latest/howtos/intercepts/)!
