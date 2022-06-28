@@ -282,3 +282,17 @@ spec:
           ports:
             - containerPort: 8080
 ```
+
+### Ignore Certain Volume Mounts
+
+An annotation `telepresence.getambassador.io/inject-ignore-volume-mounts` can be used to make the injector ignore certain volume mounts denoted by a comma-separated string. The specified volume mounts from the original container will not be appended to the agent sidecar container.
+
+```diff
+ spec:
+   template:
+     metadata:
+       annotations:
++        telepresence.getambassador.io/inject-ignore-volume-mounts: "foo,bar"
+     spec:
+       containers:
+```
